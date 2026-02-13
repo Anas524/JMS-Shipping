@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    // 'whatsapp' => [
+    //     'number' => env('WHATSAPP_NUMBER', '971527271182'),
+    //     'default_text' => env('WHATSAPP_DEFAULT_TEXT', 'Hi JMS, I need a quote.'),
+    // ],
+
 ];
