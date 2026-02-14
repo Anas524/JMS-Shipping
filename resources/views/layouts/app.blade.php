@@ -27,8 +27,8 @@
   {{-- Logo Preloader --}}
   <div id="pageLoader" class="fixed inset-0 z-[9999999] bg-white flex items-center justify-center">
     <div class="jms-loader">
-      <img src="{{ asset('images/loader-ring.png') }}" alt="" class="jms-loader-ring">
-      <img src="{{ asset('images/loader-inner.png') }}" alt="JMS" class="jms-loader-inner">
+      <img src="{{ asset('images/loader-ring-3d.png') }}" alt="" class="jms-loader-ring">
+      <img src="{{ asset('images/loader-inner-3d.png') }}" alt="JMS" class="jms-loader-inner">
     </div>
   </div>
 

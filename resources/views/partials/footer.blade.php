@@ -113,11 +113,35 @@
           Services
         </h4>
         <ul class="space-y-3">
-          <li><a href="{{ route('services') }}#airFreight" class="text-slate-600 hover:text-cyan-400 transition-colors text-sm flex items-center gap-2 group"><span class="w-0 group-hover:w-2 h-px bg-cyan-400 transition-all duration-300"></span>Air Freight</a></li>
-          <li><a href="{{ route('services') }}#seaFreight" class="text-slate-600 hover:text-cyan-400 transition-colors text-sm flex items-center gap-2 group"><span class="w-0 group-hover:w-2 h-px bg-cyan-400 transition-all duration-300"></span>Sea Freight</a></li>
-          <li><a href="{{ route('services') }}#landTransport" class="text-slate-600 hover:text-cyan-400 transition-colors text-sm flex items-center gap-2 group"><span class="w-0 group-hover:w-2 h-px bg-cyan-400 transition-all duration-300"></span>Land Transport</a></li>
-          <li><a href="{{ route('services') }}#customs" class="text-slate-600 hover:text-cyan-400 transition-colors text-sm flex items-center gap-2 group"><span class="w-0 group-hover:w-2 h-px bg-cyan-400 transition-all duration-300"></span>Customs</a></li>
-          <li><a href="{{ route('services') }}#projectCargo" class="text-slate-600 hover:text-cyan-400 transition-colors text-sm flex items-center gap-2 group"><span class="w-0 group-hover:w-2 h-px bg-cyan-400 transition-all duration-300"></span>Project Cargo</a></li>
+          <li>
+            <a href="{{ route('services') }}#airSeaFreight" class="text-slate-600 hover:text-cyan-400 transition-colors text-sm flex items-center gap-2 group">
+              <span class="w-0 group-hover:w-2 h-px bg-cyan-400 transition-all duration-300"></span>Air &amp; Sea Freight
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('services') }}#doorToDeck" class="text-slate-600 hover:text-cyan-400 transition-colors text-sm flex items-center gap-2 group">
+              <span class="w-0 group-hover:w-2 h-px bg-cyan-400 transition-all duration-300"></span>Door to Deck Services
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('services') }}#shipSpares" class="text-slate-600 hover:text-cyan-400 transition-colors text-sm flex items-center gap-2 group">
+              <span class="w-0 group-hover:w-2 h-px bg-cyan-400 transition-all duration-300"></span>Ship-Spares Logistics
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('services') }}#shipChandlers" class="text-slate-600 hover:text-cyan-400 transition-colors text-sm flex items-center gap-2 group">
+              <span class="w-0 group-hover:w-2 h-px bg-cyan-400 transition-all duration-300"></span>Ship Chandlers
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('services') }}#projectCargo" class="text-slate-600 hover:text-cyan-400 transition-colors text-sm flex items-center gap-2 group">
+              <span class="w-0 group-hover:w-2 h-px bg-cyan-400 transition-all duration-300"></span>Project Cargo
+            </a>
+          </li>
         </ul>
       </div>
 

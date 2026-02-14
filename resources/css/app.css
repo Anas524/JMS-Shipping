@@ -174,19 +174,6 @@ html.lenis body {
   width: 16px;
 }
 
-/* Mega Menu Panel Positioning */
-#svcPanel {
-  top: calc(100% + 12px);
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
-}
-
-#svcRoot.is-open #svcPanel {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-
 /* right social buttons */
 .jms-social {
   width: 44px;
@@ -217,7 +204,7 @@ html.lenis body {
   top: 0;
   left: 0;
 
-  width: 320px;
+  width: 560px;
   /* JS will update width */
   max-width: calc(100vw - 48px);
 
@@ -260,27 +247,34 @@ html.lenis body {
   border-left: 1px solid rgba(15, 23, 42, .08);
 }
 
+/* 2-column grid layout for the left services list */
+.svc-left .svc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
 #svcPanel[data-state="expanded"] {
-  width: min(760px, calc(100vw - 48px));
+  width: min(1040px, calc(100vw - 48px));
 }
 
 #svcPanel[data-state="expanded"] .svc-inner {
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 560px 1fr; /* left grid width */
 }
 
 #svcPanel[data-state="expanded"] .svc-right {
   display: block;
-  width: auto;
-  max-width: 440px;
+  width: 420px;
+  max-width: 420px;
 }
 
 /* Service Items in Menu */
 .svc-item {
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid transparent;
+  margin-bottom: 0;       /* remove old vertical list spacing */
+  padding: 0;             /* because your inner card has padding */
+  border: 0;
+  background: transparent;
   transition: all 0.2s ease;
-  margin-bottom: 4px;
   cursor: pointer;
 }
 
@@ -509,8 +503,8 @@ html.lenis body {
 /* Logo loader */
 .jms-loader {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 170px;
+  height: 170px;
 }
 
 .jms-loader-ring {

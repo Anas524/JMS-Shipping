@@ -51,314 +51,450 @@
             <div id="svcOverlay" class="hidden pointer-events-none fixed inset-0 z-40 bg-slate-900/20 backdrop-blur-sm transition-opacity duration-300 opacity-0"></div>
 
             <!-- Mega Panel -->
-            <div id="svcPanel" class="svc-panel fixed z-50 opacity-0 invisible translate-y-4 transition-all duration-300" data-state="compact">
+            <div id="svcPanel" class="svc-panel fixed z-50 transition-all duration-300" data-state="compact">
               <div class="svc-inner bg-white/95 backdrop-blur-xl rounded-2xl border border-slate-200/60 shadow-[0_25px_80px_rgba(2,6,23,0.25)] overflow-hidden">
 
-                <!-- LEFT: Categories -->
-                <aside class="svc-left bg-slate-50/50 p-4 w-[280px] border-r border-slate-200/60">
-                  <div class="text-xs font-bold uppercase tracking-wider mb-3 px-3">Our Services</div>
+                <!-- LEFT: Categories (2 columns x 4 rows) -->
+                <aside class="svc-left bg-slate-50/50 p-4 w-[520px] border-r border-slate-200/60">
+                  <div class="text-xs font-bold uppercase tracking-wider mb-3 px-1 text-slate-700">
+                    Our Services
+                  </div>
 
-                  <button class="svc-item is-active w-full text-left" type="button" data-pane="air" data-href="{{ route('services') }}#airFreight">
-                    <div class="flex items-center gap-3">
-                      <div class="w-10 h-10 rounded-xl bg-cyan-100 flex items-center justify-center text-cyan-600 svc-icon">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                        </svg>
+                  <div class="svc-grid grid grid-cols-2 gap-3">
+                    <!-- AOG -->
+                    <button class="svc-item is-active w-full text-left" type="button"
+                      data-pane="aog" data-href="{{ route('services') }}#aog">
+                      <div class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-white hover:bg-cyan-50 transition">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-100 flex items-center justify-center text-cyan-600 svc-icon">
+                          <i class="bi bi-airplane"></i>
+                        </div>
+                        <div>
+                          <div class="font-semibold text-slate-900">AOG</div>
+                          <div class="text-xs text-slate-500">Aircraft on Ground</div>
+                        </div>
                       </div>
-                      <div>
-                        <div class="font-semibold text-slate-900">Air Freight</div>
-                        <div class="text-xs text-slate-500">Express global delivery</div>
-                      </div>
-                    </div>
-                  </button>
+                    </button>
 
-                  <button class="svc-item w-full text-left" type="button" data-pane="sea" data-href="{{ route('services') }}#seaFreight">
-                    <div class="flex items-center gap-3">
-                      <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 svc-icon">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
+                    <!-- Ship Chandlers -->
+                    <button class="svc-item w-full text-left" type="button"
+                      data-pane="shipchandlers" data-href="{{ route('services') }}#shipChandlers">
+                      <div class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-white hover:bg-emerald-50 transition">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 svc-icon">
+                          <i class="bi bi-box-seam"></i>
+                        </div>
+                        <div>
+                          <div class="font-semibold text-slate-900">Ship Chandlers</div>
+                          <div class="text-xs text-slate-500">Vessel supply</div>
+                        </div>
                       </div>
-                      <div>
-                        <div class="font-semibold text-slate-900">Sea Freight</div>
-                        <div class="text-xs text-slate-500">Ocean shipping solutions</div>
-                      </div>
-                    </div>
-                  </button>
+                    </button>
 
-                  <button class="svc-item w-full text-left" type="button" data-pane="land" data-href="{{ route('services') }}#landTransport">
-                    <div class="flex items-center gap-3">
-                      <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 svc-icon">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
-                        </svg>
+                    <!-- Project Cargo -->
+                    <button class="svc-item w-full text-left" type="button"
+                      data-pane="projectcargo" data-href="{{ route('services') }}#projectCargo">
+                      <div class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-white hover:bg-purple-50 transition">
+                        <div class="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 svc-icon">
+                          <i class="bi bi-truck"></i>
+                        </div>
+                        <div>
+                          <div class="font-semibold text-slate-900">Project Cargo</div>
+                          <div class="text-xs text-slate-500">Heavy & oversized</div>
+                        </div>
                       </div>
-                      <div>
-                        <div class="font-semibold text-slate-900">Land Transport</div>
-                        <div class="text-xs text-slate-500">Ground logistics</div>
-                      </div>
-                    </div>
-                  </button>
+                    </button>
 
-                  <button class="svc-item w-full text-left" type="button" data-pane="customs" data-href="{{ route('services') }}#customs">
-                    <div class="flex items-center gap-3">
-                      <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 svc-icon">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                        </svg>
+                    <!-- Ship-Spares -->
+                    <button class="svc-item w-full text-left" type="button"
+                      data-pane="shipspares" data-href="{{ route('services') }}#shipSpares">
+                      <div class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-white hover:bg-blue-50 transition">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 svc-icon">
+                          <i class="bi bi-tools"></i>
+                        </div>
+                        <div>
+                          <div class="font-semibold text-slate-900">Ship-Spares</div>
+                          <div class="text-xs text-slate-500">Parts logistics</div>
+                        </div>
                       </div>
-                      <div>
-                        <div class="font-semibold text-slate-900">Customs</div>
-                        <div class="text-xs text-slate-500">Clearance & compliance</div>
-                      </div>
-                    </div>
-                  </button>
+                    </button>
 
-                  <button class="svc-item w-full text-left" type="button" data-pane="project" data-href="{{ route('services') }}#projectCargo">
-                    <div class="flex items-center gap-3">
-                      <div class="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 svc-icon">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                        </svg>
+                    <!-- Door to Deck -->
+                    <button class="svc-item w-full text-left" type="button"
+                      data-pane="doortodeck" data-href="{{ route('services') }}#doorToDeck">
+                      <div class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-white hover:bg-amber-50 transition">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 svc-icon">
+                          <i class="bi bi-door-open"></i>
+                        </div>
+                        <div>
+                          <div class="font-semibold text-slate-900">Door to Deck</div>
+                          <div class="text-xs text-slate-500">End-to-end</div>
+                        </div>
                       </div>
-                      <div>
-                        <div class="font-semibold text-slate-900">Project Cargo</div>
-                        <div class="text-xs text-slate-500">Heavy & oversized</div>
+                    </button>
+
+                    <!-- Air & Sea Freight -->
+                    <button class="svc-item w-full text-left" type="button"
+                      data-pane="airsea" data-href="{{ route('services') }}#airSeaFreight">
+                      <div class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-white hover:bg-cyan-50 transition">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-100 flex items-center justify-center text-cyan-600 svc-icon">
+                          <i class="bi bi-globe2"></i>
+                        </div>
+                        <div>
+                          <div class="font-semibold text-slate-900">Air & Sea Freight</div>
+                          <div class="text-xs text-slate-500">Operations</div>
+                        </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+
+                    <!-- Oil & Gas Project -->
+                    <button class="svc-item w-full text-left" type="button"
+                      data-pane="oilgas" data-href="{{ route('services') }}#oilGasProject">
+                      <div class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-white hover:bg-orange-50 transition">
+                        <div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600 svc-icon">
+                          <i class="bi bi-fuel-pump"></i>
+                        </div>
+                        <div>
+                          <div class="font-semibold text-slate-900">Oil & Gas</div>
+                          <div class="text-xs text-slate-500">Project logistics</div>
+                        </div>
+                      </div>
+                    </button>
+
+                    <!-- Offshore Logistics -->
+                    <button class="svc-item w-full text-left" type="button"
+                      data-pane="offshore" data-href="{{ route('services') }}#offshoreLogistics">
+                      <div class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 transition">
+                        <div class="w-10 h-10 rounded-xl bg-slate-200 flex items-center justify-center text-slate-700 svc-icon">
+                          <i class="bi bi-water"></i>
+                        </div>
+                        <div>
+                          <div class="font-semibold text-slate-900">Offshore</div>
+                          <div class="text-xs text-slate-500">Rigs & platforms</div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
 
                   <div class="svc-divider my-4 border-t border-slate-200"></div>
 
-                  <a class="svc-link flex items-center gap-2 text-slate-700 hover:text-cyan-600 transition-colors" href="{{ route('services') }}">
-                    <span class="font-semibold">View All Services</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                  </a>
-                  <a class="svc-link flex items-center gap-2 text-slate-700 hover:text-cyan-600 transition-colors mt-2" href="{{ route('contact') }}">
-                    <span class="font-semibold">Talk to an Expert</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-                    </svg>
-                  </a>
+                  <div class="flex gap-3">
+                    <a class="flex-1 text-center py-2.5 rounded-xl bg-slate-900 text-white font-semibold text-sm hover:bg-slate-800 transition"
+                      href="{{ route('services') }}">View All</a>
+                    <a class="flex-1 text-center py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-white transition"
+                      href="{{ route('contact') }}">Talk to Expert</a>
+                  </div>
                 </aside>
 
                 <!-- RIGHT: Content Panes -->
-                <section class="svc-right p-6 w-[400px]">
-                  <!-- AIR -->
-                  <div class="svc-pane is-active" data-pane="air">
+                <section class="svc-right p-6 w-[420px]">
+                  <!-- AOG -->
+                  <div class="svc-pane is-active" data-pane="aog">
                     <div class="relative h-32 rounded-xl overflow-hidden mb-4">
-                      <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80" class="w-full h-full object-cover" alt="Air Freight">
+                      <img src="https://i.pinimg.com/1200x/87/0f/3a/870f3aa3f4f5fafc7256b5d7dc03f522.jpg"
+                        class="w-full h-full object-cover" alt="AOG">
                       <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <div class="absolute bottom-3 left-3 text-white font-bold">Global Air Network</div>
+                      <div class="absolute bottom-3 left-3 text-white font-bold">Time-Critical Air Support</div>
                     </div>
+
                     <div class="svc-head mb-4">
-                      <h3 class="text-xl font-bold text-slate-900 mb-2">Air Freight Solutions</h3>
-                      <p class="text-sm text-slate-600 leading-relaxed">Fast, reliable air cargo services with real-time tracking and priority handling for time-sensitive shipments.</p>
+                      <h3 class="text-xl font-bold text-slate-900 mb-2">AOG (Aircraft on Ground)</h3>
+                      <p class="text-sm text-slate-600 leading-relaxed">
+                        Rapid response logistics to reduce aircraft downtime with priority uplift, tracking, and tight coordination.
+                      </p>
                     </div>
+
                     <div class="grid grid-cols-2 gap-3 mb-4">
                       <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Express Delivery
+                        <i class="bi bi-check2-circle text-cyan-600"></i><span>Express uplift</span>
                       </div>
                       <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Charter Services
+                        <i class="bi bi-check2-circle text-cyan-600"></i><span>24/7 coordination</span>
                       </div>
                       <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Door-to-Door
+                        <i class="bi bi-check2-circle text-cyan-600"></i><span>Door-to-airport</span>
                       </div>
                       <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Dangerous Goods
+                        <i class="bi bi-check2-circle text-cyan-600"></i><span>Time-critical handling</span>
                       </div>
                     </div>
+
                     <div class="svc-actions flex gap-3">
-                      <a class="svc-cta flex-1 text-center py-2.5 rounded-xl bg-cyan-600 text-white font-semibold text-sm hover:bg-cyan-700 transition-colors" href="{{ route('contact') }}#quoteForm">Get Quote</a>
-                      <a class="svc-ghost flex-1 text-center py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors" href="{{ route('services') }}#airFreight">Learn More</a>
+                      <a class="svc-cta flex-1 text-center py-2.5 rounded-xl bg-cyan-600 text-white font-semibold text-sm hover:bg-cyan-700 transition-colors"
+                        href="{{ route('contact') }}#quoteForm">Get Quote</a>
+                      <a class="svc-ghost flex-1 text-center py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors"
+                        href="{{ route('services') }}#aog">Learn More</a>
                     </div>
                   </div>
 
-                  <!-- SEA -->
-                  <div class="svc-pane" data-pane="sea">
+                  <!-- Ship Chandlers -->
+                  <div class="svc-pane" data-pane="shipchandlers">
                     <div class="relative h-32 rounded-xl overflow-hidden mb-4">
-                      <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&q=80" class="w-full h-full object-cover" alt="Sea Freight">
+                      <img src="https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg"
+                        class="w-full h-full object-cover" alt="Ship Chandlers">
                       <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <div class="absolute bottom-3 left-3 text-white font-bold">Ocean Excellence</div>
+                      <div class="absolute bottom-3 left-3 text-white font-bold">Vessel Supply & Support</div>
                     </div>
+
                     <div class="svc-head mb-4">
-                      <h3 class="text-xl font-bold text-slate-900 mb-2">Sea Freight Services</h3>
-                      <p class="text-sm text-slate-600 leading-relaxed">Cost-effective FCL and LCL shipping with global coverage and flexible scheduling options.</p>
+                      <h3 class="text-xl font-bold text-slate-900 mb-2">Ship Chandlers</h3>
+                      <p class="text-sm text-slate-600 leading-relaxed">
+                        Reliable vessel provisioning with fast sourcing, clear documentation, and timely delivery to port.
+                      </p>
                     </div>
+
                     <div class="grid grid-cols-2 gap-3 mb-4">
                       <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        FCL / LCL
+                        <i class="bi bi-check2-circle text-emerald-600"></i><span>Port delivery</span>
                       </div>
                       <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Reefer Cargo
+                        <i class="bi bi-check2-circle text-emerald-600"></i><span>Fast sourcing</span>
                       </div>
                       <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Bulk Shipping
+                        <i class="bi bi-check2-circle text-emerald-600"></i><span>Inventory planning</span>
                       </div>
                       <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        RoRo Services
+                        <i class="bi bi-check2-circle text-emerald-600"></i><span>Complete paperwork</span>
                       </div>
                     </div>
+
                     <div class="svc-actions flex gap-3">
-                      <a class="svc-cta flex-1 text-center py-2.5 rounded-xl bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors" href="{{ route('contact') }}#quoteForm">Get Quote</a>
-                      <a class="svc-ghost flex-1 text-center py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors" href="{{ route('services') }}#seaFreight">Learn More</a>
+                      <a class="svc-cta flex-1 text-center py-2.5 rounded-xl bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 transition-colors"
+                        href="{{ route('contact') }}#quoteForm">Get Quote</a>
+                      <a class="svc-ghost flex-1 text-center py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors"
+                        href="{{ route('services') }}#shipChandlers">Learn More</a>
                     </div>
                   </div>
 
-                  <!-- LAND -->
-                  <div class="svc-pane" data-pane="land">
+                  <!-- Project Cargo -->
+                  <div class="svc-pane" data-pane="projectcargo">
                     <div class="relative h-32 rounded-xl overflow-hidden mb-4">
-                      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" class="w-full h-full object-cover" alt="Land Transport">
+                      <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=900&q=80"
+                        class="w-full h-full object-cover" alt="Project Cargo">
                       <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <div class="absolute bottom-3 left-3 text-white font-bold">Ground Logistics</div>
+                      <div class="absolute bottom-3 left-3 text-white font-bold">Heavy & Oversized Logistics</div>
                     </div>
-                    <div class="svc-head mb-4">
-                      <h3 class="text-xl font-bold text-slate-900 mb-2">Land Transport</h3>
-                      <p class="text-sm text-slate-600 leading-relaxed">Comprehensive trucking and rail solutions for regional and cross-border deliveries.</p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-3 mb-4">
-                      <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        FTL / LTL
-                      </div>
-                      <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Cross-Border
-                      </div>
-                      <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Last Mile
-                      </div>
-                      <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Warehousing
-                      </div>
-                    </div>
-                    <div class="svc-actions flex gap-3">
-                      <a class="svc-cta flex-1 text-center py-2.5 rounded-xl bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 transition-colors" href="{{ route('contact') }}#quoteForm">Get Quote</a>
-                      <a class="svc-ghost flex-1 text-center py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors" href="{{ route('services') }}#landTransport">Learn More</a>
-                    </div>
-                  </div>
 
-                  <!-- CUSTOMS -->
-                  <div class="svc-pane" data-pane="customs">
-                    <div class="relative h-32 rounded-xl overflow-hidden mb-4">
-                      <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=80" class="w-full h-full object-cover" alt="Customs">
-                      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <div class="absolute bottom-3 left-3 text-white font-bold">Hassle-Free Clearance</div>
-                    </div>
-                    <div class="svc-head mb-4">
-                      <h3 class="text-xl font-bold text-slate-900 mb-2">Customs Clearance</h3>
-                      <p class="text-sm text-slate-600 leading-relaxed">Expert documentation handling and compliance management for smooth border crossings.</p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-3 mb-4">
-                      <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Import/Export
-                      </div>
-                      <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Duty Drawback
-                      </div>
-                      <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        HS Code Class
-                      </div>
-                      <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Consultation
-                      </div>
-                    </div>
-                    <div class="svc-actions flex gap-3">
-                      <a class="svc-cta flex-1 text-center py-2.5 rounded-xl bg-amber-600 text-white font-semibold text-sm hover:bg-amber-700 transition-colors" href="{{ route('contact') }}">Expert Help</a>
-                      <a class="svc-ghost flex-1 text-center py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors" href="{{ route('services') }}#customs">Learn More</a>
-                    </div>
-                  </div>
-
-                  <!-- PROJECT -->
-                  <div class="svc-pane" data-pane="project">
-                    <div class="relative h-32 rounded-xl overflow-hidden mb-4">
-                      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" class="w-full h-full object-cover" alt="Project Cargo">
-                      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <div class="absolute bottom-3 left-3 text-white font-bold">Heavy Lift Specialists</div>
-                    </div>
                     <div class="svc-head mb-4">
                       <h3 class="text-xl font-bold text-slate-900 mb-2">Project Cargo</h3>
-                      <p class="text-sm text-slate-600 leading-relaxed">Specialized handling for oversized, heavy, and complex logistics projects worldwide.</p>
+                      <p class="text-sm text-slate-600 leading-relaxed">
+                        Specialized movement for oversized and heavy cargo with routing, permits, and site coordination.
+                      </p>
                     </div>
+
                     <div class="grid grid-cols-2 gap-3 mb-4">
                       <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Heavy Machinery
+                        <i class="bi bi-check2-circle text-purple-600"></i><span>Route survey</span>
                       </div>
                       <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Breakbulk
+                        <i class="bi bi-check2-circle text-purple-600"></i><span>Permit handling</span>
                       </div>
                       <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Route Survey
+                        <i class="bi bi-check2-circle text-purple-600"></i><span>Heavy-lift planning</span>
                       </div>
                       <div class="flex items-center gap-2 text-sm text-slate-700">
-                        <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Site Coordination
+                        <i class="bi bi-check2-circle text-purple-600"></i><span>Site coordination</span>
                       </div>
                     </div>
+
                     <div class="svc-actions flex gap-3">
-                      <a class="svc-cta flex-1 text-center py-2.5 rounded-xl bg-purple-600 text-white font-semibold text-sm hover:bg-purple-700 transition-colors" href="{{ route('contact') }}">Discuss Project</a>
-                      <a class="svc-ghost flex-1 text-center py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors" href="{{ route('services') }}#projectCargo">Learn More</a>
+                      <a class="svc-cta flex-1 text-center py-2.5 rounded-xl bg-purple-600 text-white font-semibold text-sm hover:bg-purple-700 transition-colors"
+                        href="{{ route('contact') }}#quoteForm">Get Quote</a>
+                      <a class="svc-ghost flex-1 text-center py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors"
+                        href="{{ route('services') }}#projectCargo">Learn More</a>
+                    </div>
+                  </div>
+
+                  <!-- Ship-Spares -->
+                  <div class="svc-pane" data-pane="shipspares">
+                    <div class="relative h-32 rounded-xl overflow-hidden mb-4">
+                      <img src="https://images.pexels.com/photos/1624695/pexels-photo-1624695.jpeg"
+                        class="w-full h-full object-cover" alt="Ship Spares">
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                      <div class="absolute bottom-3 left-3 text-white font-bold">Critical Parts Logistics</div>
+                    </div>
+
+                    <div class="svc-head mb-4">
+                      <h3 class="text-xl font-bold text-slate-900 mb-2">Ship-Spares</h3>
+                      <p class="text-sm text-slate-600 leading-relaxed">
+                        Fast movement of essential parts with tracking, careful handling, and priority connections.
+                      </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-blue-600"></i><span>Priority dispatch</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-blue-600"></i><span>Secure packing</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-blue-600"></i><span>End-to-end tracking</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-blue-600"></i><span>On-time delivery</span>
+                      </div>
+                    </div>
+
+                    <div class="svc-actions flex gap-3">
+                      <a class="svc-cta flex-1 text-center py-2.5 rounded-xl bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors"
+                        href="{{ route('contact') }}#quoteForm">Get Quote</a>
+                      <a class="svc-ghost flex-1 text-center py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors"
+                        href="{{ route('services') }}#shipSpares">Learn More</a>
+                    </div>
+                  </div>
+
+                  <!-- Door to Deck -->
+                  <div class="svc-pane" data-pane="doortodeck">
+                    <div class="relative h-32 rounded-xl overflow-hidden mb-4">
+                      <img src="https://images.pexels.com/photos/6407524/pexels-photo-6407524.jpeg"
+                        class="w-full h-full object-cover" alt="Door to Deck">
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                      <div class="absolute bottom-3 left-3 text-white font-bold">End-to-End Managed Moves</div>
+                    </div>
+
+                    <div class="svc-head mb-4">
+                      <h3 class="text-xl font-bold text-slate-900 mb-2">Door to Deck</h3>
+                      <p class="text-sm text-slate-600 leading-relaxed">
+                        Full service logistics from pickup to final delivery with smooth coordination and visibility.
+                      </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-amber-600"></i><span>Pickup & delivery</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-amber-600"></i><span>Documentation</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-amber-600"></i><span>Shipment visibility</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-amber-600"></i><span>Dedicated support</span>
+                      </div>
+                    </div>
+
+                    <div class="svc-actions flex gap-3">
+                      <a class="svc-cta flex-1 text-center py-2.5 rounded-xl bg-amber-600 text-white font-semibold text-sm hover:bg-amber-700 transition-colors"
+                        href="{{ route('contact') }}#quoteForm">Get Quote</a>
+                      <a class="svc-ghost flex-1 text-center py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors"
+                        href="{{ route('services') }}#doorToDeck">Learn More</a>
+                    </div>
+                  </div>
+
+                  <!-- Air & Sea Freight -->
+                  <div class="svc-pane" data-pane="airsea">
+                    <div class="relative h-32 rounded-xl overflow-hidden mb-4">
+                      <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=900&q=80"
+                        class="w-full h-full object-cover" alt="Air & Sea Freight">
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                      <div class="absolute bottom-3 left-3 text-white font-bold">Global Freight Operations</div>
+                    </div>
+
+                    <div class="svc-head mb-4">
+                      <h3 class="text-xl font-bold text-slate-900 mb-2">Air & Sea Freight</h3>
+                      <p class="text-sm text-slate-600 leading-relaxed">
+                        Flexible freight solutions with reliable routing, competitive rates, and shipment visibility.
+                      </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-cyan-600"></i><span>FCL / LCL options</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-cyan-600"></i><span>Express air uplift</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-cyan-600"></i><span>Custom routing</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-cyan-600"></i><span>Tracking & updates</span>
+                      </div>
+                    </div>
+
+                    <div class="svc-actions flex gap-3">
+                      <a class="svc-cta flex-1 text-center py-2.5 rounded-xl bg-cyan-600 text-white font-semibold text-sm hover:bg-cyan-700 transition-colors"
+                        href="{{ route('contact') }}#quoteForm">Get Quote</a>
+                      <a class="svc-ghost flex-1 text-center py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors"
+                        href="{{ route('services') }}#airSeaFreight">Learn More</a>
+                    </div>
+                  </div>
+
+                  <!-- Oil & Gas -->
+                  <div class="svc-pane" data-pane="oilgas">
+                    <div class="relative h-32 rounded-xl overflow-hidden mb-4">
+                      <img src="https://images.pexels.com/photos/15970032/pexels-photo-15970032.jpeg"
+                        class="w-full h-full object-cover" alt="Oil & Gas">
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                      <div class="absolute bottom-3 left-3 text-white font-bold">Industrial Project Support</div>
+                    </div>
+
+                    <div class="svc-head mb-4">
+                      <h3 class="text-xl font-bold text-slate-900 mb-2">Oil & Gas Project Logistics</h3>
+                      <p class="text-sm text-slate-600 leading-relaxed">
+                        Coordinated logistics for industrial cargo with compliance, timelines, and careful handling.
+                      </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-orange-600"></i><span>Project planning</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-orange-600"></i><span>Site coordination</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-orange-600"></i><span>Compliance support</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-orange-600"></i><span>Timely execution</span>
+                      </div>
+                    </div>
+
+                    <div class="svc-actions flex gap-3">
+                      <a class="svc-cta flex-1 text-center py-2.5 rounded-xl bg-orange-600 text-white font-semibold text-sm hover:bg-orange-700 transition-colors"
+                        href="{{ route('contact') }}#quoteForm">Get Quote</a>
+                      <a class="svc-ghost flex-1 text-center py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors"
+                        href="{{ route('services') }}#oilGasProject">Learn More</a>
+                    </div>
+                  </div>
+
+                  <!-- Offshore -->
+                  <div class="svc-pane" data-pane="offshore">
+                    <div class="relative h-32 rounded-xl overflow-hidden mb-4">
+                      <img src="https://images.pexels.com/photos/30445637/pexels-photo-30445637.png"
+                        class="w-full h-full object-cover" alt="Offshore">
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                      <div class="absolute bottom-3 left-3 text-white font-bold">Rigs & Platform Logistics</div>
+                    </div>
+
+                    <div class="svc-head mb-4">
+                      <h3 class="text-xl font-bold text-slate-900 mb-2">Offshore Logistics</h3>
+                      <p class="text-sm text-slate-600 leading-relaxed">
+                        Offshore movement support with careful coordination, scheduling, and documentation readiness.
+                      </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-slate-700"></i><span>Port coordination</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-slate-700"></i><span>On-time sailing</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-slate-700"></i><span>Documentation ready</span>
+                      </div>
+                      <div class="flex items-center gap-2 text-sm text-slate-700">
+                        <i class="bi bi-check2-circle text-slate-700"></i><span>Dedicated support</span>
+                      </div>
+                    </div>
+
+                    <div class="svc-actions flex gap-3">
+                      <a class="svc-cta flex-1 text-center py-2.5 rounded-xl bg-slate-900 text-white font-semibold text-sm hover:bg-slate-800 transition-colors"
+                        href="{{ route('contact') }}#quoteForm">Get Quote</a>
+                      <a class="svc-ghost flex-1 text-center py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors"
+                        href="{{ route('services') }}#offshoreLogistics">Learn More</a>
                     </div>
                   </div>
                 </section>
@@ -441,47 +577,79 @@
               </button>
 
               <div id="mobileServicesMenu" class="hidden pl-4 space-y-2 overflow-hidden transition-all duration-300">
-                <a href="{{ route('services') }}#airFreight" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 hover:bg-cyan-50 hover:text-cyan-600 text-sm transition-colors">
+
+                <a href="{{ route('services') }}#aog" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 hover:bg-cyan-50 hover:text-cyan-600 text-sm transition-colors">
                   <div class="w-8 h-8 rounded-lg bg-cyan-100 flex items-center justify-center">
                     <svg class="w-4 h-4 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
                     </svg>
                   </div>
-                  Air Freight
+                  AOG
                 </a>
-                <a href="{{ route('services') }}#seaFreight" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 hover:bg-blue-50 hover:text-blue-600 text-sm transition-colors">
-                  <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
-                    <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                  </div>
-                  Sea Freight
-                </a>
-                <a href="{{ route('services') }}#landTransport" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 hover:bg-emerald-50 hover:text-emerald-600 text-sm transition-colors">
+
+                <a href="{{ route('services') }}#shipChandlers" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 hover:bg-emerald-50 hover:text-emerald-600 text-sm transition-colors">
                   <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
-                    <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M6 7l1 14h10l1-14M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2"></path>
                     </svg>
                   </div>
-                  Land Transport
+                  Ship Chandlers
                 </a>
-                <a href="{{ route('services') }}#customs" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 hover:bg-amber-50 hover:text-amber-600 text-sm transition-colors">
-                  <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center">
-                    <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                    </svg>
-                  </div>
-                  Customs Clearance
-                </a>
+
                 <a href="{{ route('services') }}#projectCargo" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 hover:bg-purple-50 hover:text-purple-600 text-sm transition-colors">
                   <div class="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
-                    <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2"></path>
                     </svg>
                   </div>
                   Project Cargo
                 </a>
+
+                <a href="{{ route('services') }}#shipSpares" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 hover:bg-blue-50 hover:text-blue-600 text-sm transition-colors">
+                  <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8 10-4-4-4 4"></path>
+                    </svg>
+                  </div>
+                  Ship-Spares Logistics
+                </a>
+
+                <a href="{{ route('services') }}#doorToDeck" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 hover:bg-amber-50 hover:text-amber-600 text-sm transition-colors">
+                  <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m-4-4h8"></path>
+                    </svg>
+                  </div>
+                  Door to Deck
+                </a>
+
+                <a href="{{ route('services') }}#airSeaFreight" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 hover:bg-cyan-50 hover:text-cyan-600 text-sm transition-colors">
+                  <div class="w-8 h-8 rounded-lg bg-cyan-100 flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18M5 8h14M7 16h10"></path>
+                    </svg>
+                  </div>
+                  Air & Sea Freight
+                </a>
+
+                <a href="{{ route('services') }}#oilGasProject" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 hover:bg-orange-50 hover:text-orange-600 text-sm transition-colors">
+                  <div class="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l4 8-4 12-4-12 4-8z"></path>
+                    </svg>
+                  </div>
+                  Oil & Gas Project
+                </a>
+
+                <a href="{{ route('services') }}#offshoreLogistics" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-700 text-sm transition-colors">
+                  <div class="w-8 h-8 rounded-lg bg-slate-200 flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17l6-6 4 4 8-8"></path>
+                    </svg>
+                  </div>
+                  Offshore Logistics
+                </a>
+
                 <div class="pt-2 border-t border-slate-100 mt-2">
                   <a href="{{ route('services') }}" class="flex items-center justify-between px-4 py-2.5 text-cyan-600 font-semibold text-sm">
                     View All Services

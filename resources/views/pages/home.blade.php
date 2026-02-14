@@ -11,10 +11,10 @@
   <div class="absolute inset-0 overflow-hidden">
     {{-- Slide 1: VIDEO --}}
     <div class="jms-slide is-active" data-type="video"
-      data-title="Fast & Reliable Logistics for Air, Sea, Land & Customs"
-      data-desc="End-to-end shipping with transparent communication and real-time support."
-      data-btn1-label="Explore Resources"
-      data-btn1-href="{{ route('resources') }}"
+      data-title="Air & Sea Freight Operations — Delivered with Precision"
+      data-desc="Fast, compliant, and reliable international logistics with Door-to-Deck coordination from origin to vessel."
+      data-btn1-label="Get a Quote"
+      data-btn1-href="{{ route('contact') }}#quoteForm"
       data-btn2-label="View Services"
       data-btn2-href="{{ route('services') }}">
       <video class="jms-media" muted playsinline preload="auto">
@@ -24,12 +24,12 @@
 
     {{-- Slide 2: VIDEO --}}
     <div class="jms-slide" data-type="video"
-      data-title="Customs Clearance & Documentation"
-      data-desc="Fast clearance, compliant paperwork, and smooth border processing for your cargo."
-      data-btn1-label="Get a Quote"
-      data-btn1-href="{{ route('contact') }}#quoteForm"
-      data-btn2-label="Contact Us"
-      data-btn2-href="{{ route('contact') }}">
+      data-title="AOG & Ship-Spares Logistics — Time-Critical Support"
+      data-desc="Rapid sourcing and express movement of aircraft-on-ground and marine spares to keep operations running without delays."
+      data-btn1-label="Request Urgent Support"
+      data-btn1-href="{{ route('contact') }}"
+      data-btn2-label="Ship Spares"
+      data-btn2-href="{{ route('services') }}#shipSpares">
       <video class="jms-media" muted playsinline preload="auto">
         <source src="{{ asset('videos/hero4.mp4') }}" type="video/mp4">
       </video>
@@ -37,12 +37,12 @@
 
     {{-- Slide 3: VIDEO --}}
     <div class="jms-slide" data-type="video"
-      data-title="Project Cargo & Heavy Shipments"
-      data-desc="Special handling, route planning, and end-to-end coordination for oversized cargo."
-      data-btn1-label="Request a Call"
+      data-title="Oil & Gas • Offshore Logistics • Project Cargo"
+      data-desc="Specialized handling for heavy, oversized, and offshore requirements — planned end-to-end with safety and compliance."
+      data-btn1-label="Talk to Our Team"
       data-btn1-href="{{ route('contact') }}"
-      data-btn2-label="Our Services"
-      data-btn2-href="{{ route('services') }}">
+      data-btn2-label="Explore Capabilities"
+      data-btn2-href="{{ route('services') }}#oilGas">
       <video class="jms-media" muted playsinline preload="auto">
         <source src="{{ asset('videos/hero5.mp4') }}" type="video/mp4">
       </video>
@@ -55,11 +55,11 @@
   {{-- Right-center social icons --}}
   <div class="hidden md:flex flex-col gap-3 absolute right-6 top-1/2 -translate-y-1/2 z-30">
     <a href="#" target="_blank" aria-label="X" class="jms-social"><i class="bi bi-linkedin"></i></a>
-    
+
     <a href="#" target="_blank" aria-label="X" class="jms-social"><i class="bi bi-twitter-x"></i></a>
-    
+
     <a href="#" target="_blank" aria-label="Instagram" class="jms-social"><i class="bi bi-instagram"></i></a>
-    
+
     <a href="#" target="_blank" aria-label="Facebook" class="jms-social"><i class="bi bi-facebook"></i></a>
   </div>
 
@@ -68,17 +68,17 @@
     <div class="h-full flex items-center">
       <div id="heroCopy" class="max-w-xl pt-24 md:pt-28">
         <h1 id="heroTitle" class="text-white text-4xl md:text-5xl font-extrabold leading-tight">
-          Fast & Reliable Logistics for Air, Sea, Land & Customs
+          Air &amp; Sea Freight Operations — Delivered with Precision
         </h1>
 
         <p id="heroDesc" class="mt-4 text-white/85 text-base md:text-lg">
-          We move your cargo smoothly with end-to-end support and transparent communication.
+          Fast, compliant, and reliable international logistics with Door-to-Deck coordination from origin to vessel.
         </p>
 
         <div class="mt-6 flex gap-3 flex-wrap">
           <a id="heroBtn1" href="{{ route('contact') }}#quoteForm"
             class="rounded-lg bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-white/90">
-            Track Your Order
+            Get a Quote
           </a>
 
           <a id="heroBtn2" href="{{ route('services') }}"
@@ -132,100 +132,121 @@
         Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 animate-gradient">Services</span>
       </h2>
       <p class="mt-5 text-slate-600 max-w-2xl mx-auto text-lg">
-        Complete logistics solutions planned, coordinated, and delivered with precision and care.
+        Marine & logistics solutions delivered fast — from urgent AOG support to ship spares, chandling, and offshore projects.
       </p>
     </div>
 
     {{-- Cards Grid with stagger animations --}}
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 perspective-1000">
-      {{-- Air --}}
-      <a href="{{ route('services') }}" class="service-card group relative" data-aos="fade-up" data-aos-delay="0">
+
+      {{-- Air & Sea Freight Operations --}}
+      <a href="{{ route('services') }}#airSeaFreight" class="service-card group relative" data-aos="fade-up" data-aos-delay="0">
         <div class="service-card-inner">
           <div class="service-icon-wrapper">
             <div class="service-icon bg-gradient-to-br from-cyan-400/20 to-blue-500/20 text-cyan-400 group-hover:text-white">
-              <span class="icon-normal"><i class="bi bi-airplane-fill text-2xl"></i></span>
+              <span class="icon-normal"><i class="bi bi-globe2 text-2xl"></i></span>
               <span class="icon-hover"><i class="bi bi-arrow-up-right text-2xl"></i></span>
             </div>
             <div class="service-glow group-hover:opacity-100"></div>
           </div>
-          <h3 class="service-title">Air Freight</h3>
-          <p class="service-desc">Fast delivery for urgent and high-value shipments worldwide with real-time tracking.</p>
-          <div class="service-arrow">
-            <span>Learn More</span>
-            <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
-          </div>
+          <h3 class="service-title">Air &amp; Sea Freight</h3>
+          <p class="service-desc">End-to-end air and sea freight operations with reliable schedules, visibility, and proactive support.</p>
+          <div class="service-arrow"><span>Learn More</span><i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i></div>
         </div>
       </a>
 
-      {{-- Sea --}}
-      <a href="{{ route('services') }}" class="service-card group relative" data-aos="fade-up" data-aos-delay="100">
+      {{-- AOG --}}
+      <a href="{{ route('services') }}#aog" class="service-card group relative" data-aos="fade-up" data-aos-delay="100">
         <div class="service-card-inner">
           <div class="service-icon-wrapper">
             <div class="service-icon bg-gradient-to-br from-blue-400/20 to-indigo-500/20 text-blue-400 group-hover:text-white">
-              <span class="icon-normal"><i class="bi bi-water text-2xl"></i></span>
+              <span class="icon-normal"><i class="bi bi-airplane-engines text-2xl"></i></span>
               <span class="icon-hover"><i class="bi bi-arrow-up-right text-2xl"></i></span>
             </div>
             <div class="service-glow group-hover:opacity-100"></div>
           </div>
-          <h3 class="service-title">Sea Freight</h3>
-          <p class="service-desc">Cost-efficient FCL/LCL solutions with reliable sailing schedules and global coverage.</p>
-          <div class="service-arrow">
-            <span>Learn More</span>
-            <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
-          </div>
+          <h3 class="service-title">AOG</h3>
+          <p class="service-desc">Urgent Aircraft-on-Ground logistics support to minimize downtime with fast coordination and dispatch.</p>
+          <div class="service-arrow"><span>Learn More</span><i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i></div>
         </div>
       </a>
 
-      {{-- Land --}}
-      <a href="{{ route('services') }}" class="service-card group relative" data-aos="fade-up" data-aos-delay="200">
+      {{-- Door to Deck --}}
+      <a href="{{ route('services') }}#doorToDeck" class="service-card group relative" data-aos="fade-up" data-aos-delay="200">
         <div class="service-card-inner">
           <div class="service-icon-wrapper">
             <div class="service-icon bg-gradient-to-br from-emerald-400/20 to-teal-500/20 text-emerald-400 group-hover:text-white">
-              <span class="icon-normal"><i class="bi bi-truck text-2xl"></i></span>
+              <span class="icon-normal"><i class="bi bi-box-arrow-in-down text-2xl"></i></span>
               <span class="icon-hover"><i class="bi bi-arrow-up-right text-2xl"></i></span>
             </div>
             <div class="service-glow group-hover:opacity-100"></div>
           </div>
-          <h3 class="service-title">Land Transport</h3>
-          <p class="service-desc">Regional trucking and door delivery with careful handling and GPS tracking.</p>
-          <div class="service-arrow">
-            <span>Learn More</span>
-            <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
-          </div>
+          <h3 class="service-title">Door to Deck</h3>
+          <p class="service-desc">Pickup to vessel delivery — managed end-to-end for smooth handover, timing, and compliance.</p>
+          <div class="service-arrow"><span>Learn More</span><i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i></div>
         </div>
       </a>
 
-      {{-- Customs --}}
-      <a href="{{ route('services') }}" class="service-card group relative" data-aos="fade-up" data-aos-delay="300">
+      {{-- Ship Chandlers --}}
+      <a href="{{ route('services') }}#shipChandlers" class="service-card group relative" data-aos="fade-up" data-aos-delay="300">
         <div class="service-card-inner">
           <div class="service-icon-wrapper">
             <div class="service-icon bg-gradient-to-br from-amber-400/20 to-orange-500/20 text-amber-400 group-hover:text-white">
-              <span class="icon-normal"><i class="bi bi-file-earmark-text-fill text-2xl"></i></span>
+              <span class="icon-normal"><i class="bi bi-life-preserver text-2xl"></i></span>
               <span class="icon-hover"><i class="bi bi-arrow-up-right text-2xl"></i></span>
             </div>
             <div class="service-glow group-hover:opacity-100"></div>
           </div>
-          <h3 class="service-title">Customs Clearance</h3>
-          <p class="service-desc">Compliance, documentation, HS code support, and fast clearance processing.</p>
-          <div class="service-arrow">
-            <span>Learn More</span>
-            <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
-          </div>
+          <h3 class="service-title">Ship Chandlers</h3>
+          <p class="service-desc">Reliable vessel supply support with quick turnaround, accurate documentation, and port coordination.</p>
+          <div class="service-arrow"><span>Learn More</span><i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i></div>
         </div>
       </a>
 
-      {{-- Project --}}
-      <a href="{{ route('services') }}" class="service-card group relative" data-aos="fade-up" data-aos-delay="400">
+      {{-- Ship-Spares Logistics --}}
+      <a href="{{ route('services') }}#shipSpares" class="service-card group relative" data-aos="fade-up" data-aos-delay="400">
         <div class="service-card-inner">
           <div class="service-icon-wrapper">
             <div class="service-icon bg-gradient-to-br from-rose-400/20 to-pink-500/20 text-rose-400 group-hover:text-white">
-              <span class="icon-normal"><i class="bi bi-box-seam-fill text-2xl"></i></span>
+              <span class="icon-normal"><i class="bi bi-gear-fill text-2xl"></i></span>
+              <span class="icon-hover"><i class="bi bi-arrow-up-right text-2xl"></i></span>
+            </div>
+            <div class="service-glow group-hover:opacity-100"></div>
+          </div>
+          <h3 class="service-title">Ship-Spares Logistics</h3>
+          <p class="service-desc">Time-critical marine spare parts handling — storage, consolidation, customs, and delivery to port.</p>
+          <div class="service-arrow"><span>Learn More</span><i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i></div>
+        </div>
+      </a>
+
+      {{-- Project Cargo’s --}}
+      <a href="{{ route('services') }}#projectCargo" class="service-card group relative" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-card-inner">
+          <div class="service-icon-wrapper">
+            <div class="service-icon bg-gradient-to-br from-violet-400/20 to-purple-500/20 text-violet-400 group-hover:text-white">
+              <span class="icon-normal"><i class="bi bi-truck-flatbed text-2xl"></i></span>
               <span class="icon-hover"><i class="bi bi-arrow-up-right text-2xl"></i></span>
             </div>
             <div class="service-glow group-hover:opacity-100"></div>
           </div>
           <h3 class="service-title">Project Cargo</h3>
-          <p class="service-desc">Oversized shipments planned end-to-end with special coordination and permits.</p>
+          <p class="service-desc">Heavy lift and oversized shipments with route planning, permits, and end-to-end coordination.</p>
+          <div class="service-arrow"><span>Learn More</span><i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i></div>
+        </div>
+      </a>
+
+      {{-- Oil & Gas Project --}}
+      <a href="{{ route('services') }}#oilGas" class="service-card group relative" data-aos="fade-up" data-aos-delay="600">
+        <div class="service-card-inner">
+          <div class="service-icon-wrapper">
+            <div class="service-icon bg-gradient-to-br from-slate-400/20 to-slate-700/20 text-slate-700 group-hover:text-white">
+              <span class="icon-normal"><i class="bi bi-fuel-pump-fill text-2xl"></i></span>
+              <span class="icon-hover"><i class="bi bi-arrow-up-right text-2xl"></i></span>
+            </div>
+            <div class="service-glow group-hover:opacity-100"></div>
+          </div>
+          <h3 class="service-title">Oil &amp; Gas Project</h3>
+          <p class="service-desc">Specialized logistics for oil &amp; gas projects — critical timelines, compliance, and heavy movements.</p>
           <div class="service-arrow">
             <span>Learn More</span>
             <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
@@ -233,18 +254,18 @@
         </div>
       </a>
 
-      {{-- Door-to-Door --}}
-      <a href="{{ route('services') }}" class="service-card group relative" data-aos="fade-up" data-aos-delay="500">
+      {{-- Offshore Logistics --}}
+      <a href="{{ route('services') }}#offshore" class="service-card group relative" data-aos="fade-up" data-aos-delay="700">
         <div class="service-card-inner">
           <div class="service-icon-wrapper">
-            <div class="service-icon bg-gradient-to-br from-violet-400/20 to-purple-500/20 text-violet-400 group-hover:text-white">
-              <span class="icon-normal"><i class="bi bi-globe-americas text-2xl"></i></span>
+            <div class="service-icon bg-gradient-to-br from-sky-400/20 to-blue-700/20 text-blue-700 group-hover:text-white">
+              <span class="icon-normal"><i class="bi bi-compass-fill text-2xl"></i></span>
               <span class="icon-hover"><i class="bi bi-arrow-up-right text-2xl"></i></span>
             </div>
             <div class="service-glow group-hover:opacity-100"></div>
           </div>
-          <h3 class="service-title">Door-to-Door</h3>
-          <p class="service-desc">Pickup, freight, clearance, and delivery — handled end-to-end seamlessly.</p>
+          <h3 class="service-title">Offshore Logistics</h3>
+          <p class="service-desc">End-to-end offshore coordination — port handling, vessel support, and time-critical delivery.</p>
           <div class="service-arrow">
             <span>Learn More</span>
             <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>

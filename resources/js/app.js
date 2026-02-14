@@ -300,8 +300,8 @@ $(function () {
 
       const PAD = 24;
       const GAP_Y = 8;          // slightly below Services (was 14)
-      const COMPACT_W = 280;
-      const EXPANDED_MAX = 760;
+      const COMPACT_W = 560;
+      const EXPANDED_MAX = 1040;
 
       const top = Math.round(r.bottom + GAP_Y);
 
@@ -408,7 +408,7 @@ $(function () {
     });
 
     // defaults
-    setPane("air");
+    setPane("aog");
     setState("compact");
   })();
 
