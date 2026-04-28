@@ -829,6 +829,15 @@
           <p class="text-sm font-semibold text-white">Dashboard</p>
           <p class="text-xs text-slate-500 mt-0.5">Command Center</p>
         </a>
+
+        <a href="{{ route('admin.resources.index') }}"
+          class="group p-4 rounded-2xl bg-slate-800/50 border border-slate-700/50 hover:border-emerald-500/30 hover:bg-slate-800 transition-all duration-300">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <i class="bi bi-journal-richtext text-emerald-400 text-lg"></i>
+          </div>
+          <p class="text-sm font-semibold text-white">Resources</p>
+          <p class="text-xs text-slate-500 mt-0.5">{{ $resourcesCount ?? 0 }} posts</p>
+        </a>
         @endif
 
         <a href="{{ route('admin.inquiries.index') }}"
@@ -838,15 +847,6 @@
           </div>
           <p class="text-sm font-semibold text-white">Inquiries</p>
           <p class="text-xs text-slate-500 mt-0.5">{{ $unreadCount ?? 0 }} pending</p>
-        </a>
-
-        <a href="{{ route('admin.newsletter.index') }}"
-          class="group p-4 rounded-2xl bg-slate-800/50 border border-slate-700/50 hover:border-pink-500/30 hover:bg-slate-800 transition-all duration-300">
-          <div class="w-10 h-10 rounded-xl bg-pink-500/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-            <i class="bi bi-envelope-paper text-pink-400 text-lg"></i>
-          </div>
-          <p class="text-sm font-semibold text-white">Newsletter</p>
-          <p class="text-xs text-slate-500 mt-0.5">Subscribers</p>
         </a>
 
         <button onclick="document.getElementById('logout-form').submit()"

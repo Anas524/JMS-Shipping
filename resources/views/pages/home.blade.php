@@ -407,7 +407,7 @@
 
         <div class="mt-6">
           <div class="jms-stat-mid text-5xl font-bold text-slate-900">
-            <span class="jms-count counter-anim" data-to="10" data-suffix="+">0</span>
+            <span class="jms-count counter-anim" data-to="17" data-suffix="+">0</span>
             <span class="text-2xl text-slate-500 font-normal">Years</span>
           </div>
         </div>
@@ -626,13 +626,11 @@
 
 <!-- Blog Section for Homepage -->
 <section class="py-20 bg-slate-50 relative overflow-hidden">
-  <!-- Background Pattern -->
   <div class="absolute inset-0 opacity-5">
     <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #0f172a 1px, transparent 0); background-size: 32px 32px;"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-    <!-- Section Header -->
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
       <div data-aos="fade-right">
         <span class="text-cyan-600 font-semibold tracking-wider uppercase text-sm flex items-center gap-2">
@@ -643,7 +641,10 @@
         </span>
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-3">From Our Blog</h2>
       </div>
-      <a href="{{ route('resources') }}" class="inline-flex items-center gap-2 text-cyan-600 font-semibold hover:text-cyan-700 transition-colors group" data-aos="fade-left">
+
+      <a href="{{ route('resources') }}"
+        class="inline-flex items-center gap-2 text-cyan-600 font-semibold hover:text-cyan-700 transition-colors group"
+        data-aos="fade-left">
         View All Articles
         <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -651,113 +652,124 @@
       </a>
     </div>
 
-    <!-- Featured + 2 Side Articles Layout -->
-    <div class="grid lg:grid-cols-2 gap-8 items-start">
+    @if($homeFeaturedPost || $homeSidePosts->count())
+      <div class="grid lg:grid-cols-2 gap-8 items-start">
 
-      <!-- Featured Article (Large) -->
-      <article class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
-        data-aos="fade-right">
-        <a href="{{ route('resources') }}" class="block">
-          <div class="relative h-64 lg:h-80 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=80"
-              alt="Featured"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        {{-- Featured Article --}}
+        @if($homeFeaturedPost)
+          <article
+            class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+            data-aos="fade-right">
+            <a href="{{ route('resources.show', $homeFeaturedPost->slug) }}" class="block">
+              <div class="relative h-64 lg:h-80 overflow-hidden">
+                <img
+                  src="{{ $homeFeaturedPost->featured_image ? asset('storage/' . $homeFeaturedPost->featured_image) : 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=80' }}"
+                  alt="{{ $homeFeaturedPost->title }}"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  onerror="this.src='https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=80';">
 
-            <div class="absolute top-4 left-4">
-              <span class="px-3 py-1 bg-cyan-500 text-white text-xs font-bold uppercase tracking-wider rounded-full">
-                Featured
-              </span>
-            </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <div class="flex items-center gap-3 text-white/80 text-sm mb-3">
-                <span>Jan 15, 2026</span>
-                <span class="w-1 h-1 bg-white/50 rounded-full"></span>
-                <span>8 min read</span>
+                <div class="absolute top-4 left-4">
+                  <span class="px-3 py-1 bg-cyan-500 text-white text-xs font-bold uppercase tracking-wider rounded-full">
+                    Featured
+                  </span>
+                </div>
+
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                  <div class="flex items-center gap-3 text-white/80 text-sm mb-3">
+                    <span>{{ optional($homeFeaturedPost->published_at)->format('M d, Y') }}</span>
+                    <span class="w-1 h-1 bg-white/50 rounded-full"></span>
+                    <span>{{ $homeFeaturedPost->read_time ?? 5 }} min read</span>
+                  </div>
+
+                  <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors line-clamp-2">
+                    {{ $homeFeaturedPost->title }}
+                  </h3>
+
+                  <p class="text-white/80 text-sm line-clamp-2 mb-4">
+                    {{ $homeFeaturedPost->excerpt }}
+                  </p>
+
+                  <span class="inline-flex items-center gap-2 text-cyan-300 font-semibold text-sm">
+                    Read Article
+                    <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                  </span>
+                </div>
               </div>
-              <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors line-clamp-2">
-                The Future of Sustainable Shipping: 2026 and Beyond
-              </h3>
-              <p class="text-white/80 text-sm line-clamp-2 mb-4">
-                Explore how the maritime industry is embracing green technologies and carbon-neutral logistics solutions.
-              </p>
-              <span class="inline-flex items-center gap-2 text-cyan-300 font-semibold text-sm">
-                Read Article
-                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
-              </span>
+            </a>
+          </article>
+        @else
+          <div class="bg-white rounded-2xl p-10 shadow-lg" data-aos="fade-right">
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">No featured article yet</h3>
+            <p class="text-slate-600">Create and publish a featured resource post from the admin panel to show it here.</p>
+          </div>
+        @endif
+
+        {{-- Side Articles --}}
+        <div class="flex flex-col gap-6">
+          @forelse($homeSidePosts as $index => $post)
+            @php
+              $categoryColor = match(strtolower($post->category ?? '')) {
+                  'shipping guides', 'shipping guide' => 'text-cyan-600',
+                  'regulations' => 'text-amber-600',
+                  'case studies', 'case study' => 'text-purple-600',
+                  'industry news' => 'text-emerald-600',
+                  default => 'text-cyan-600',
+              };
+            @endphp
+
+            <article
+              class="group flex gap-5 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-4"
+              data-aos="fade-left"
+              data-aos-delay="{{ ($index + 1) * 100 }}">
+              <a href="{{ route('resources.show', $post->slug) }}" class="contents">
+                <div class="relative w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden">
+                  <img
+                    src="{{ $post->featured_image ? asset('storage/' . $post->featured_image) : 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=400&q=80' }}"
+                    alt="{{ $post->title }}"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onerror="this.src='https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=400&q=80';">
+                </div>
+
+                <div class="flex flex-col justify-center min-w-0">
+                  @if($post->category)
+                    <span class="{{ $categoryColor }} text-xs font-bold uppercase tracking-wider mb-2">
+                      {{ $post->category }}
+                    </span>
+                  @endif
+
+                  <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors line-clamp-2">
+                    {{ $post->title }}
+                  </h4>
+
+                  <div class="flex items-center gap-2 text-slate-500 text-sm">
+                    <span>{{ optional($post->published_at)->format('M d, Y') }}</span>
+                    <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+                    <span>{{ $post->read_time ?? 5 }} min</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          @empty
+            <div class="bg-white rounded-2xl p-10 shadow-lg">
+              <h3 class="text-xl font-bold text-slate-900 mb-3">No articles yet</h3>
+              <p class="text-slate-600">Publish a few resource posts from admin and they will appear here automatically.</p>
             </div>
-          </div>
-        </a>
-      </article>
-
-      <!-- Side Articles (Stacked) -->
-      <div class="flex flex-col gap-6">
-
-        <!-- Article 2 -->
-        <article class="group flex gap-5 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-4" data-aos="fade-left" data-aos-delay="100">
-          <div class="relative w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80"
-              alt="Article"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-          </div>
-          <div class="flex flex-col justify-center">
-            <span class="text-cyan-600 text-xs font-bold uppercase tracking-wider mb-2">Shipping Guide</span>
-            <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors line-clamp-2">
-              Complete Guide to Incoterms 2026
-            </h4>
-            <div class="flex items-center gap-2 text-slate-500 text-sm">
-              <span>Jan 12, 2026</span>
-              <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-              <span>5 min</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Article 3 -->
-        <article class="group flex gap-5 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-4" data-aos="fade-left" data-aos-delay="200">
-          <div class="relative w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&q=80"
-              alt="Article"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-          </div>
-          <div class="flex flex-col justify-center">
-            <span class="text-amber-600 text-xs font-bold uppercase tracking-wider mb-2">Regulations</span>
-            <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors line-clamp-2">
-              New GCC Customs Regulations Update
-            </h4>
-            <div class="flex items-center gap-2 text-slate-500 text-sm">
-              <span>Jan 10, 2026</span>
-              <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-              <span>6 min</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Article 4 -->
-        <article class="group flex gap-5 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-4" data-aos="fade-left" data-aos-delay="300">
-          <div class="relative w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=400&q=80"
-              alt="Article"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-          </div>
-          <div class="flex flex-col justify-center">
-            <span class="text-purple-600 text-xs font-bold uppercase tracking-wider mb-2">Case Study</span>
-            <h4 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition-colors line-clamp-2">
-              500-Ton Equipment Delivery in 48 Hours
-            </h4>
-            <div class="flex items-center gap-2 text-slate-500 text-sm">
-              <span>Jan 8, 2026</span>
-              <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
-              <span>10 min</span>
-            </div>
-          </div>
-        </article>
-
+          @endforelse
+        </div>
       </div>
-    </div>
+    @else
+      <div class="bg-white rounded-3xl shadow-lg p-12 text-center">
+        <div class="text-5xl mb-4">📰</div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-3">No blog posts published yet</h3>
+        <p class="text-slate-600 max-w-2xl mx-auto">
+          Once you publish resources from the admin panel, they will appear here automatically.
+        </p>
+      </div>
+    @endif
   </div>
 </section>
 

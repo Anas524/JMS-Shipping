@@ -6,15 +6,19 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\InquiryController;
+use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\Admin\ResourcePostAdminController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 require __DIR__ . '/auth.php';
 
-Route::view('/', 'pages.home')->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::view('/about', 'pages.about')->name('about');
 Route::view('/services', 'pages.services')->name('services');
-Route::view('/resources', 'pages.resources')->name('resources');
+Route::get('/resources', [ResourceController::class, 'index'])->name('resources');
+Route::get('/resources/{slug}', [ResourceController::class, 'show'])->name('resources.show');
 Route::view('/contact', 'pages.contact')->name('contact');
 // Route::view('/quote', 'pages.quote')->name('quote');
 
@@ -36,6 +40,13 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::delete('/inquiries/{inquiry}', [InquiryAdminController::class, 'destroy'])->name('inquiries.destroy');
     Route::get('/newsletter/export', [NewsletterController::class, 'export'])
         ->name('newsletter.export');
+
+    Route::get('/resources', [ResourcePostAdminController::class, 'index'])->name('resources.index');
+    Route::get('/resources/create', [ResourcePostAdminController::class, 'create'])->name('resources.create');
+    Route::post('/resources', [ResourcePostAdminController::class, 'store'])->name('resources.store');
+    Route::get('/resources/{resource}/edit', [ResourcePostAdminController::class, 'edit'])->name('resources.edit');
+    Route::put('/resources/{resource}', [ResourcePostAdminController::class, 'update'])->name('resources.update');
+    Route::delete('/resources/{resource}', [ResourcePostAdminController::class, 'destroy'])->name('resources.destroy');
 });
 
 Route::post('/admin/login-ajax', function (Request $request) {

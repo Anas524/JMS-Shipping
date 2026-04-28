@@ -2380,3 +2380,190 @@ input:focus {
     width: auto !important;
   }
 }
+
+
+/* Admin resources form style */
+
+.resource-input,
+.resource-textarea,
+.resource-select {
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid rgb(51 65 85);
+    background: rgb(15 23 42);
+    padding: 0.85rem 1rem;
+    color: white;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.resource-input:focus,
+.resource-textarea:focus,
+.resource-select:focus {
+    border-color: rgb(6 182 212);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.12);
+}
+
+.resource-textarea {
+    resize: vertical;
+}
+
+.resource-number {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.resource-number::-webkit-outer-spin-button,
+.resource-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.resource-file-wrap {
+    position: relative;
+}
+
+.resource-file-input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.resource-file-ui {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid rgb(51 65 85);
+    background: rgb(15 23 42);
+    padding: 0.85rem 1rem;
+    color: rgb(203 213 225);
+    min-height: 58px;
+}
+
+.resource-file-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+    background: rgb(8 47 73);
+    border: 1px solid rgba(6, 182, 212, 0.25);
+    color: rgb(103 232 249);
+    padding: 0.6rem 0.95rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.resource-file-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(226 232 240);
+}
+
+.resource-check {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 0.35rem;
+    border: 1px solid rgb(71 85 105);
+    background: rgb(15 23 42);
+    display: inline-grid;
+    place-content: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin-top: 1px;
+}
+
+.resource-check::before {
+    content: "";
+    width: 0.65rem;
+    height: 0.65rem;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em white;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.resource-check:checked {
+    background: rgb(6 182 212);
+    border-color: rgb(6 182 212);
+}
+
+.resource-check:checked::before {
+    transform: scale(1);
+}
+
+.resource-date-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.resource-datetime {
+    padding-right: 3.5rem;
+    min-height: 58px;
+    line-height: 1.4;
+    color-scheme: dark;
+}
+
+.resource-date-trigger {
+    position: absolute;
+    right: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 0;
+    background: transparent;
+    color: rgb(34 211 238);
+    cursor: pointer;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+    z-index: 3;
+}
+
+.resource-date-trigger:hover {
+    background: rgba(6, 182, 212, 0.10);
+    color: rgb(165 243 252);
+}
+
+.resource-date-trigger svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    display: block;
+}
+
+.resource-datetime::-webkit-calendar-picker-indicator {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.resource-submit-btn[disabled] {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+.resource-submit-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 9999px;
+    animation: resourceSpin 0.7s linear infinite;
+}
+
+@keyframes resourceSpin {
+    to { transform: rotate(360deg); }
+}

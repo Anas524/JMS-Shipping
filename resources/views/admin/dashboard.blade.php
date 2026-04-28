@@ -53,6 +53,10 @@
                     <div class="text-3xl font-bold text-emerald-400 mb-1">{{ $stats['today_count'] ?? 0 }}</div>
                     <div class="text-sm text-slate-400">Today's Activity</div>
                 </div>
+                <div class="px-6 py-4 rounded-2xl bg-slate-800/50 border border-slate-700/50 backdrop-blur-sm">
+                    <div class="text-3xl font-bold text-amber-400 mb-1">{{ $stats['published_resources_count'] ?? 0 }}</div>
+                    <div class="text-sm text-slate-400">Published Posts</div>
+                </div>
             </div>
         </div>
     </div>
@@ -61,7 +65,7 @@
     <div class="bg-slate-950 pb-20">
         <div class="max-w-7xl mx-auto px-4 mt-10 md:mt-12 relative z-20">
 
-            <div class="grid md:grid-cols-2 gap-6">
+            <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
 
                 {{-- Inquiries Card --}}
                 <a href="{{ route('admin.inquiries.index') }}"
@@ -104,6 +108,28 @@
                             <span class="text-purple-300 font-semibold">Open Module</span>
                             <div class="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center group-hover:bg-purple-500 transition-all">
                                 <i class="bi bi-arrow-right text-purple-300 group-hover:text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{{ route('admin.resources.index') }}"
+                    class="group relative overflow-hidden rounded-3xl bg-slate-900/50 border border-slate-700/50 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/70 hover:border-emerald-500/30 hover:shadow-2xl hover:shadow-emerald-500/10">
+
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6">
+                            <i class="bi bi-journal-richtext text-emerald-300 text-3xl"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white mb-2">Resources</h3>
+                        <p class="text-slate-300/80 mb-6">Manage articles, blogs, and insights shown on the website.</p>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-emerald-300 font-semibold">Open Module</span>
+                            <div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-500 transition-all">
+                                <i class="bi bi-arrow-right text-emerald-300 group-hover:text-white"></i>
                             </div>
                         </div>
                     </div>
